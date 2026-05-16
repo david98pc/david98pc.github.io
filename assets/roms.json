@@ -2,7 +2,7 @@
   {
     "id": "coloros-16-duchamp",
     "title": "ColorOS 16",
-    "description": "Port exclusivo y optimizado de ColorOS 16 para POCO X6 Pro (duchamp). Rendimiento extremo, personalización avanzada y toda la estética de OPPO/OnePlus en tu dispositivo.",
+    "description": "Exclusive and optimized ColorOS 16 port for POCO X6 Pro (duchamp). Extreme performance, advanced customization, and the full OPPO/OnePlus aesthetic on your device.",
     "image": "assets/res/coloros-banner.jpg",
     "releases": "assets/releases/coloros-duchamp.json"
   }

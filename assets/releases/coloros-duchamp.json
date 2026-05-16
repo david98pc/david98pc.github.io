@@ -2,12 +2,13 @@
   {
     "version": "v1.0 - Initial Port",
     "android_ver": "14",
-    "date": "15 May 2026",
-    "changelog": "https://t.me/OemPorts10T",
+    "date": "May 15, 2026",
+    "changelog": "https://telegra.ph/ColorOS-16-Duchamp-Changelog",
+    "notes": "https://telegra.ph/ColorOS-16-Duchamp-Notes",
     "downloads": [
       {
         "device": "POCO X6 Pro",
-        "link": "https://t.me/OemPorts10T"
+        "link": "https://drive.google.com/file/d/1b2u6QOXvPZCQJWwexxzSQviSlAMQbmg6/view?usp=sharing"
       }
     ]
   }

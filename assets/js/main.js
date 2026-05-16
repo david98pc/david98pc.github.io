@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('roms-grid');
   try {
@@ -23,14 +24,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       card.href = `rom.html?id=${rom.id}`;
       card.className = 'davv-card';
       card.innerHTML = `
-        <div class="card-banner"><img src="${rom.image}" alt="${rom.title}"></div>
+        <div class="card-banner">
+          <img src="${rom.image}" alt="${rom.title}">
+        </div>
         <div class="card-body">
           <h2 class="card-title">${rom.title}</h2>
           <p class="card-desc">${rom.description}</p>
-          <div class="card-meta"><span>Última: ${latestVer}</span><span>${latestDate}</span></div>
+          <div class="card-meta">
+            <span>Latest: ${latestVer}</span>
+            <span>${latestDate}</span>
+          </div>
         </div>
       `;
       container.appendChild(card);
     }
-  } catch(e) { container.innerHTML = '<p style="color:red;">Error cargando proyectos.</p>'; }
+  } catch(e) {
+    container.innerHTML = '<p style="color:red;">Error loading projects.</p>';
+  }
 });
