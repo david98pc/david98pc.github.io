@@ -1,16 +1,9 @@
 [
   {
-    "id": "crdroid-onyx",
-    "title": "crDroid Android",
-    "description": "Compilación fluida enfocada en personalización y rendimiento óptimo.",
-    "image": "assets/res/logo-crdroid.png",
-    "releases": "assets/releases/crdroid-onyx.json"
-  },
-  {
-    "id": "hyperos-port",
-    "title": "HyperOS Premium Port",
-    "description": "Port de sistema optimizado con la app Xiaomi Parts integrada por defecto.",
-    "image": "assets/res/logo-hyperos.png",
-    "releases": "assets/releases/hyperos-port.json"
+    "id": "coloros-16-duchamp",
+    "title": "ColorOS 16",
+    "description": "Port exclusivo y optimizado de ColorOS 16 para POCO X6 Pro (duchamp). Rendimiento extremo, personalización avanzada y toda la estética de OPPO/OnePlus en tu dispositivo.",
+    "image": "assets/res/coloros-banner.jpg",
+    "releases": "assets/releases/coloros-duchamp.json"
   }
 ]

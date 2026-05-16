@@ -1,0 +1,14 @@
+[
+  {
+    "version": "v1.0 - Initial Port",
+    "android_ver": "14",
+    "date": "15 May 2026",
+    "changelog": "https://t.me/OemPorts10T",
+    "downloads": [
+      {
+        "device": "POCO X6 Pro",
+        "link": "https://t.me/OemPorts10T"
+      }
+    ]
+  }
+]
