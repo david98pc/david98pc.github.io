@@ -5,5 +5,20 @@
     "description": "Exclusive and optimized ColorOS 16 port for POCO X6 Pro (duchamp). Extreme performance, advanced customization, and the full OPPO/OnePlus aesthetic on your device.",
     "image": "assets/res/coloros-banner.jpg",
     "releases": "assets/releases/coloros-duchamp.json"
+  },
+  {
+    "id": "OxygenOs-16-duchamp",
+    "title": "OxygenOs 16",
+    "description": "Exclusive and optimized OxygenOs 16 port for POCO X6 Pro (duchamp). Extreme performance, advanced customization, and the full OPPO/OnePlus aesthetic on your device.",
+    "image": "assets/res/OxygenOs-banner.jpg",
+    "releases": "assets/releases/OxygenOs-duchamp.json"
+  },
+  {
+    "id": "RealmeUI7-duchamp",
+    "title": "RealmeUI 16",
+    "description": "Exclusive and optimized RealmeUI port for POCO X6 Pro (duchamp). Extreme performance, advanced customization, and the full OPPO/OnePlus aesthetic on your device.",
+    "image": "assets/res/RealmeUI-banner.jpg",
+    "releases": "assets/releases/RealmeUI-duchamp.json"
   }
+
 ]
