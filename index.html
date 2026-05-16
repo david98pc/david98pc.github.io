@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OEM ROM Ports & Kernels | davv98</title>
+  <link rel="icon" type="image/png" href="assets/res/ic.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            zinc: {
+              950: '#09090b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body class="selection:bg-blue-500/30 selection:text-blue-200">
+
+  <!-- Glassmorphic Header -->
+  <header class="sticky top-0 z-40 w-full p-6 header-container backdrop-blur-md">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <h1 class="text-3xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-zinc-100 via-zinc-200 to-zinc-400">
+          OEM Ports & Kernels
+        </h1>
+        <p class="subtitle text-sm font-medium mt-0.5">Desarrollo y optimización por davv98</p>
+      </div>
+      
+      <!-- Theme Switcher / Decorative Accent -->
+      <button onclick="toggleTheme()" class="text-xs font-semibold px-3 py-1.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-zinc-400 hover:text-zinc-200">
+        Cambiar Modo
+      </button>
+    </div>
+    
+    <!-- Minimal Navigation Tabs -->
+    <div class="max-w-6xl mx-auto flex border-b mt-6 nav-divider">
+      <button class="tab-btn active px-4 py-2 text-sm font-semibold tracking-wide uppercase" data-tab="roms">ROMs</button>
+      <button class="tab-btn px-4 py-2 text-sm font-semibold tracking-wide uppercase" data-tab="kernels">Kernels</button>
+      <button class="tab-btn px-4 py-2 text-sm font-semibold tracking-wide uppercase" data-tab="flashing">Guía de Flasheo</button>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-6xl mx-auto p-6 mt-4">
+    <div class="tab-content-container">
+      
+      <!-- Tab: ROMs -->
+      <div id="roms-tab" class="tab-content active">
+        <section id="roms-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></section>
+      </div>
+      
+      <!-- Tab: Kernels -->
+      <div id="kernels-tab" class="tab-content hidden">
+        <section id="kernels-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></section>
+      </div>
+      
+      <!-- Tab: Flashing Guide -->
+      <div id="flashing-tab" class="tab-content hidden">
+        <section id="flashing-container" class="max-w-none"></section>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- Minimalist Footer -->
+  <footer class="max-w-6xl mx-auto text-center text-xs p-8 mt-12 border-t border-white/5 text-zinc-500 footer-container">
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>&copy; 2026 davv98 &bull; Diseñado con elegancia y minimalismo</div>
+      <div class="flex gap-4 font-medium">
+        <a href="https://t.me/OemPorts10T" target="_blank" class="hover:text-blue-400 transition-colors">Telegram Comunidad</a>
+        <span class="text-zinc-700">|</span>
+        <a href="https://github.com/davv98" target="_blank" class="hover:text-zinc-300 transition-colors">GitHub Profile</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

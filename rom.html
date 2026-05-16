@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalles de la ROM | davv98</title>
+  <link rel="icon" type="image/png" href="assets/res/ic.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            zinc: {
+              950: '#09090b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="assets/js/rom.js" defer></script>
+</head>
+<body class="selection:bg-blue-500/30 selection:text-blue-200">
+
+  <!-- Glassmorphic Header -->
+  <header class="sticky top-0 z-40 w-full p-6 header-container backdrop-blur-md">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <div>
+        <h1 class="text-2xl font-extrabold tracking-tight text-zinc-100">Detalles del Sistema</h1>
+        <p class="subtitle text-xs font-medium mt-0.5">Repositorio de compilaciones oficiales</p>
+      </div>
+      <a href="./" class="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-zinc-300 hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Volver al Inicio
+      </a>
+    </div>
+  </header>
+
+  <!-- ROM Details Body Container -->
+  <main class="max-w-4xl mx-auto p-6 mt-6">
+    <!-- Header Hero Card loaded dynamically -->
+    <div id="rom-header" class="card mb-10 p-6 md:p-8 rounded-2xl border border-white/5 bg-zinc-900/10 backdrop-blur-xl">
+      <div class="animate-pulse space-y-4">
+        <div class="h-6 bg-zinc-800 rounded w-1/4"></div>
+        <div class="h-4 bg-zinc-800 rounded w-3/4"></div>
+      </div>
+    </div>
+
+    <!-- Section: Downloads Split Divider -->
+    <div class="flex items-center gap-4 mb-6">
+      <h3 class="text-sm font-bold uppercase tracking-wider text-zinc-400">Historial de Lanzamientos</h3>
+      <div class="flex-grow border-t border-white/5"></div>
+    </div>
+
+    <!-- Releases List loaded dynamically -->
+    <div id="releases-container" class="space-y-6"></div>
+  </main>
+
+  <!-- Modern Download Gate Modal -->
+  <div id="download-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+    <div class="card relative max-w-md w-full mx-4 p-6 text-center transform scale-95 transition-transform duration-300 border border-white/10 bg-zinc-900/90 shadow-2xl">
+      <button id="close-modal-btn" class="absolute top-4 right-4 text-zinc-500 hover:text-zinc-200 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      
+      <h3 class="text-xl font-bold text-zinc-100 mb-3">Verificación de Seguridad</h3>
+      
+      <div class="space-y-3 text-sm text-zinc-400 text-left bg-black/20 p-4 rounded-xl border border-white/5 mb-6 leading-relaxed">
+        <p>&bull; Asegúrate de haber leído la <span class="font-semibold text-zinc-200">Guía de Flasheo</span> y notas previas para mitigar bugs o fallas críticas de encriptación.</p>
+        <p>&bull; Serás redirigido de forma externa. Si experimentas problemas de carga, considera pausar temporalmente bloqueadores de publicidad o DNS estrictos.</p>
+        <p class="text-xs text-amber-400/90 font-medium bg-amber-500/5 p-2 rounded border border-amber-500/10">&bull; IMPORTANTE: Prohibido generar espejos (mirrors) directos o compartir la URL final de descarga sin dar créditos.</p>
+      </div>
+      
+      <div class="flex justify-center">
+        <a id="proceed-btn" href="#" target="_blank" class="w-full text-center bg-blue-600 text-white hover:bg-blue-500 px-6 py-3 rounded-xl font-semibold transition-all pointer-events-none opacity-40 select-none shadow-lg shadow-blue-600/10">
+          Proceder (5)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Telegraph Embedded Modal Reader -->
+  <div id="reader-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+    <div class="card relative max-w-3xl w-full max-h-[85vh] flex flex-col mx-4 transform scale-95 transition-transform duration-300 border border-white/10 bg-zinc-900/95 shadow-2xl overflow-hidden">
+      <div class="flex justify-between items-center p-5 border-b border-white/5 bg-black/10">
+        <h3 id="reader-title" class="text-lg font-bold text-zinc-100 truncate">Cargando Notas...</h3>
+        <button id="close-reader-btn" class="text-zinc-500 hover:text-zinc-200 transition-colors ml-4 shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <div id="reader-content" class="p-6 overflow-y-auto text-zinc-300 flex-1 prose prose-invert max-w-none text-sm leading-relaxed">
+        <div class="flex justify-center items-center h-48">
+           <div class="animate-spin rounded-full h-7 w-7 border-t-2 border-b-2 border-blue-500"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimalist Footer -->
+  <footer class="max-w-4xl mx-auto text-center text-xs p-8 mt-12 border-t border-white/5 text-zinc-500 footer-container">
+    <div>&copy; 2026 davv98 &bull; Desarrollado con los más altos estándares visuales.</div>
+  </footer>
+
+</body>
+</html>

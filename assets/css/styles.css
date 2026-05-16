@@ -1,0 +1,72 @@
+body {
+  background-color: #09090b;
+  color: #f4f4f5;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.header-container {
+  background-color: rgba(9, 9, 11, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.subtitle { color: #a1a1aa; }
+.nav-divider { border-color: rgba(255, 255, 255, 0.06); }
+
+body.light-mode {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+body.light-mode .header-container {
+  background-color: rgba(248, 250, 252, 0.75);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+body.light-mode .subtitle { color: #475569; }
+body.light-mode .nav-divider { border-color: rgba(0, 0, 0, 0.06); }
+
+.tab-btn {
+  color: #71717a;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+.tab-btn:hover { color: #e4e4e7; }
+.tab-btn.active {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+}
+body.light-mode .tab-btn { color: #64748b; }
+body.light-mode .tab-btn:hover { color: #0f172a; }
+body.light-mode .tab-btn.active { color: #3b82f6; border-bottom-color: #3b82f6; }
+
+.tab-content-container { position: relative; overflow: hidden; min-height: 400px; }
+.tab-content {
+  position: absolute; top: 0; left: 0; width: 100%; opacity: 0;
+  transform: translateX(12px); transition: all 0.3s ease-in-out; visibility: hidden;
+}
+.tab-content.active { position: relative; opacity: 1; transform: translateX(0); visibility: visible; }
+.tab-content.slide-out-left { transform: translateX(-12px); }
+.tab-content.slide-out-right { transform: translateX(12px); }
+
+.card {
+  background-color: rgba(22, 22, 29, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(28, 28, 38, 0.55);
+}
+body.light-mode .card {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+body.light-mode .card:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.card .desc { color: #a1a1aa; }
+body.light-mode .card .desc { color: #475569; }
+.card .device-text { color: #71717a; }
+body.light-mode .card .device-text { color: #64748b; }
